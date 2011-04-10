@@ -5,3 +5,8 @@ Frisk : Lightweight Functional Testing
 Frisk is functional testing framework designed to be run from the command line. It 
 allows for simple gets/posts and passing the results through assertions to test the 
 resulting content.
+
+Requirements
+--------------
+> PHP 5.3+
+> pecl_http extension
