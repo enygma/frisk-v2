@@ -2,8 +2,17 @@
 namespace Frisk\Request;
 use Frisk\Util\Http as Http;
 
+/**
+ * GET Request handling class
+ *
+ * @package frisk-v2
+ * @author Chris Cornutt <ccornutt@phpdeveloper.org>
+ */
 class Get extends \Frisk\Request
 {
+	/**
+	 * Make the GET request
+	 */
 	public function request()
 	{
 		$this->setType('GET');

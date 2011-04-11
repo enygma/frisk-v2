@@ -24,6 +24,14 @@ $request->setUri('http://talkingpixels.org')
 	
 print_r($request);
 
-// pass it off to the http 
+//-----------------------
+die();
+$assertions = array(
+	new Assert(),
+	new Assert()
+);
+
+$test = new Test($request,$assertions);
+//-----------------------
 
 ?>

@@ -2,13 +2,40 @@
 namespace Frisk;
 use Frisk\Util\Http as Http;
 
+/**
+ * Request base class, extends HTTP abstract class
+ *
+ * @package frisk-v2
+ * @author Chris Cornutt <ccornutt@phpdeveloper.org>
+ */
 class Request extends Http
 {
+	/**
+	 * Request type (ex. GET, POST, PUT)
+	 * @var string
+	 */
 	private $_type 				= null;
+	
+	/**
+	 * Request object (http)
+	 * @var object
+	 */
 	private $_requestObject 	= null;
+	
+	/**
+	 * Response object (http)
+	 * @var object
+	 */
 	private $_responseObject 	= null;
 	
 	## Getters and Setters ####################
+	
+	/**
+	 * Set request type
+	 *
+	 * @param string $requestType Request type
+	 * @return object $this Current object
+	 */
 	public function setType($requestType)
 	{
 		$requestType = strtoupper($requestType);
@@ -19,19 +46,45 @@ class Request extends Http
 		}
 		return $this;
 	}
+	
+	/**
+	 * Get current request type
+	 *
+	 * @return string $_type Request type
+	 */
 	public function getType()
 	{
 		return $this->_type;
 	}
+	
+	/**
+	 * Set request location
+	 *
+	 * @param string $uri URL location
+	 * @return object $this Current object
+	 */
 	public function setUri($uri)
 	{
 		$this->_uri = $uri;
 		return $this;
 	}
+	
+	/**
+	 * Get current request location
+	 *
+	 * @return string $_uri Current location
+	 */
 	public function getUri()
 	{
 		return $this->_uri;
 	}
+	
+	/**
+	 * Set request paramaters
+	 *
+	 * @param mixed $params Parameters to send (string or array)
+	 * @return object $this Current object
+	 */
 	public function setParams($params)
 	{
 		$this->_params = $params;
