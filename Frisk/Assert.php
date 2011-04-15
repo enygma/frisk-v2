@@ -1,8 +1,11 @@
 <?php
-namespace Frisk/Match;
+namespace Frisk;
 
-abstract class Match {
+abstract class Assert {
 
+	private $_type	= null;
+
+	public function assert(){}
 }
 
 ?>
