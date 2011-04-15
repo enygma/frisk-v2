@@ -15,14 +15,20 @@ $request->setUri('http://google.com')
 	->setParams(array('q'=>'php'))
 	->request();
 
-print_r($request);
+//print_r($request);
 
 $request = new Request\Post();
-$request->setUri('http://talkingpixels.org')
-	->setParams(array())
+$request->setUri('http://talkingpixels.org/index.php')
+	->setParams(array('test'=>'one'))
 	->request();
 	
-print_r($request);
+echo 'response: '; print_r($request->getResponseBody());
+echo "\n\n";
+
+$contains = new Assert\Contains();
+$contains->assert($request,'string');
+
+print_r($contains);
 
 //-----------------------
 die();
