@@ -117,6 +117,13 @@ class Request extends Http
 	{
 		return $this->_responseObject;
 	}
+	
+	/**
+	 * Set the current request object
+	 *
+	 * @param object $requestObject HttpRequest
+	 * @return object $this Current object
+	 */
 	public function setRequestObject($requestObject)
 	{
 		if($requestObject instanceof \HttpRequest){
@@ -126,9 +133,28 @@ class Request extends Http
 		}
 		return $this;
 	}
+	
+	/**
+	 * Return the current request object
+	 *
+	 * @return object HttpMessage object
+	 */
 	public function getRequestObject()
 	{
 		return $this->_requestObject;
+	}
+	
+	/**
+	 * Get the body content of the request's response
+	 *
+	 * @return string Response body
+	 */
+	public function getResponseBody()
+	{
+		if($this->_responseObject == null){
+			throw new Exception('Request object not set!');
+		}
+		return $this->_responseObject->getBody();
 	}
 	
 	## Main methods ###########################

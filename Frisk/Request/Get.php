@@ -17,24 +17,18 @@ class Get extends \Frisk\Request
 	{
 		$this->setType('GET');
 		
-		//print_r($this->getParams());
-		$params = $this->getParams(true);
-		print_r($params);
-		
-		$url = $this->getUri().'/?'.$params;
-		echo $url;
-		
-		echo 'request!';
-		
+		$params 		= $this->getParams(true);		
+		$url 			= $this->getUri().'/?'.$params;
+
 		$httpRequest 	= new \HttpRequest($url,\HttpRequest::METH_GET);
 		$httpResponse 	= $httpRequest->send();
 		
-		var_dump($httpRequest);
+		//var_dump($httpRequest);
 		
 		$this->setRequestObject($httpRequest);
 		$this->setResponseObject($httpResponse);
 		
-		var_dump($httpResponse);
+		//var_dump($httpResponse);
 		
 	}
 }
