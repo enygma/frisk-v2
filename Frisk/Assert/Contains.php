@@ -25,8 +25,10 @@ class Contains extends Assert
 	 */
 	public function assert($request,$containsString)
 	{
-		echo 'assert: '.$this->_type;
-		//echo $request->_responseObject->getData();
+		$content 	= $request->_responseObject->getBody();
+		$status 	= ($this->_caseSensitive===true) ? (bool)strpos($content,$containsString) : (bool)stripos($content,$containsString);
+		
+		($status==true) ? $this->setPass(true) : $this->setPass(false);
 	}
 	
 }

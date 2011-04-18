@@ -20,13 +20,13 @@ class Request extends Http
 	 * Request object (http)
 	 * @var object
 	 */
-	private $_requestObject 	= null;
+	public $_requestObject 	= null;
 	
 	/**
 	 * Response object (http)
 	 * @var object
 	 */
-	private $_responseObject 	= null;
+	public $_responseObject 	= null;
 	
 	## Getters and Setters ####################
 	

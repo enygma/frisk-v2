@@ -26,9 +26,10 @@ echo 'response: '; print_r($request->getResponseBody());
 echo "\n\n";
 
 $contains = new Assert\Contains();
-$contains->assert($request,'string');
+$contains->assert($request,'pixeh');
 
 print_r($contains);
+echo 'pass: '; var_dump($contains->getPass());
 
 //-----------------------
 die();
