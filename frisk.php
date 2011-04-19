@@ -29,7 +29,14 @@ $contains = new Assert\Contains();
 $contains->assert($request,'pixeh');
 
 print_r($contains);
-echo 'pass: '; var_dump($contains->getPass());
+var_dump($contains->getStatus());
+
+$contains = new Assert\Equals();
+$contains->assert($request,'talkingpixels.org');
+
+print_r($contains);
+var_dump($contains->getStatus());
+
 
 //-----------------------
 die();
