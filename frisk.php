@@ -5,6 +5,8 @@ namespace Frisk;
 use Frisk\Util\Http as Http;
 use Frisk\Request as Request;
 
+error_reporting(E_ALL);
+
 require_once __NAMESPACE__.'/Util/Autoload.php';
 spl_autoload_register(array(__NAMESPACE__.'\Util\Autoload','load'));
 
@@ -53,17 +55,17 @@ class Test1 extends Test
 		
 	}
 }
-$test = new Test();
-var_dump($test);
+$test = new Test1();
+//var_dump($test);
 
 //$tests = new Test\Collection();
-$tests = null;
+//$tests = null;
 
-$runner = new Runner($tests);
+$runner = new Runner();
 $runner->addTest($test);
 $runner->runTests();
 
-var_dump($runner);
+echo 'runner obj: '; var_dump($runner);
 
 echo "\n\n";
 //-----------------------------------------------
