@@ -24,9 +24,11 @@ class Assert {
 	/**
 	 * Assertion method
 	 *
+	 * @param object $request HttpMessage object
+	 * @param mixed $parameters Assertion parameters
 	 * @return null
 	 */
-	public function assert(){}
+	public function assert($request,$parameters){}
 	
 	/**
 	 * Set Pass/Fail status

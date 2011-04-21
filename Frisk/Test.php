@@ -1,25 +1,15 @@
 <?php
-namespace Test;
+namespace Frisk;
 
+/**
+ * Base test class
+ * 
+ * @package frisk-v2
+ * @author Chris Cornutt <ccornutt@phpdeveloper.org>
+ */
 class Test
 {
-	private $_testDirectory = null;
-	
-	//---------------------
-	public function setTestDirectory($testDirectory)
-	{
-		
-	}
-	public function getTestDirectory()
-	{
-		return $this->_testDirectory;
-	}
-	//---------------------
-	
-	public function runTests()
-	{
-		
-	}
+	// nothing here yet
 }
 
 ?>
