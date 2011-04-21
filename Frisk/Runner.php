@@ -62,10 +62,15 @@ class Runner
 
 	public function runTests()
 	{
-		echo "run";
+		echo "run ###########\n\n";
 		// see if we have a collection
+		
 		if($this->_testCollection!=null){
+			print_r($this->_testCollection);
 			
+			foreach($this->_testCollection as $test){
+				echo 'test: '; print_r($test);
+			}
 		}else{
 			// no collection, let's look in the tests directory
 		}

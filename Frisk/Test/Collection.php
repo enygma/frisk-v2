@@ -1,7 +1,7 @@
 <?php
 namespace Frisk\Test;
 
-class Collection implements \Iterator
+class Collection implements \ArrayAccess,\IteratorAggregate
 {
 	private $_testSet = array();
 	
@@ -10,14 +10,35 @@ class Collection implements \Iterator
 		//nothing here
 	}
 	
-	public function rewind(){}
-	public function current(){}
-	public function key(){}
-	public function next(){}
-	public function valid(){}
+	// -------------------------------
+	// Iterator methods
+	
+	public function offsetGet($offset)
+	{
+		return (isset($this->_testSet[$offset])) ? $this->_testSet[$offset] : null;
+	}
+	public function offsetSet($offset,$value)
+	{
+		$this->_testSet[] = $value;
+	}
+	public function offsetUnset($offset)
+	{
+		if(isset($this->_testSet[$offset])){ unset($this->_testSet[$offset]); }
+	}
+	public function offsetExists($offset)
+	{
+		reutrn (isset($this->_testSet[$offset])) ? true : false;
+	}
+	public function getIterator()
+	{
+		return new \ArrayIterator($this->_testSet);
+	}
+	
+	// --------------------------------
+	// Custom methods
 	
 	public function add($test)
 	{
-		$this->_testSetp[] = $test;
+		$this->offsetSet(null,$test);
 	}
 }
