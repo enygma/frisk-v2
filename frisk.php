@@ -37,6 +37,37 @@ $contains->assert($request,'talkingpixels.org');
 print_r($contains);
 var_dump($contains->getStatus());
 
+$match = new Assert\MatchTag();
+$match->assert($request,array('title','testing'));
+
+print_r($match);
+var_dump($match->getStatus());
+
+echo "\n\n";
+//-----------------------------------------------
+echo "### Tests #########\n";
+class Test1 extends Test
+{
+	public function testMyFirst()
+	{
+		
+	}
+}
+$test = new Test();
+var_dump($test);
+
+//$tests = new Test\Collection();
+$tests = null;
+
+$runner = new Runner($tests);
+$runner->addTest($test);
+$runner->runTests();
+
+var_dump($runner);
+
+echo "\n\n";
+//-----------------------------------------------
+
 
 //-----------------------
 die();
