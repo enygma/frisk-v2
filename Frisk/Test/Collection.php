@@ -27,7 +27,7 @@ class Collection implements \ArrayAccess,\IteratorAggregate
 	}
 	public function offsetExists($offset)
 	{
-		reutrn (isset($this->_testSet[$offset])) ? true : false;
+		return (isset($this->_testSet[$offset])) ? true : false;
 	}
 	public function getIterator()
 	{
