@@ -37,7 +37,11 @@ class Runner
 	 */
 	public function setTestDirectory($testDirectory)
 	{
-	
+		if(is_dir($testDirectory)){
+			$this->_testDirectory = $testDirectory;	
+		}else{
+			throw new Exception('Invalid tests directory: '.$testDirectory);	
+		}
 	}
 	
 	public function addTest($testObject)
